@@ -1,4 +1,4 @@
-program vg_psb_cdall
+program vl_psb_cdall
   use gmsh_interface
   use metis_interface
   use string
@@ -56,6 +56,7 @@ program vg_psb_cdall
   call psb_init(ic)
   call psb_info(ic, ip, np)
   call psb_set_errverbosity(2)
+
   call psb_cdall(ic,desc_a,info,vg = npart)
 
   nr_gl = desc_a%get_global_rows()
@@ -75,4 +76,4 @@ program vg_psb_cdall
 
   call psb_exit(ic)
 
-end program vg_psb_cdall
+end program vl_psb_cdall
